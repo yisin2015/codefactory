@@ -1,0 +1,155 @@
+package {DaoSuperPackage}.base;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.session.RowBounds;
+
+/**
+ * 此接口为[代码工厂]自动生成
+ * @Time {Time}
+ * @GeneratedByCodeFactory
+ */
+public interface IBaseDao {
+
+    /**
+     * 插入记录
+     * @param String mapperId
+     * @param T record
+     * @return int
+     */
+    public <T> int insert(String mapperId, T record);
+    
+    /**
+     * 插入记录
+     * @param String mapperId
+     * @param Object obj
+     * @return int
+     */
+    public int insertBySelect(String mapperId, Object obj);
+
+    /**
+     * 根据主键修改全部属性
+     * @param String mapperId
+     * @param T record
+     * @return int
+     */
+    public <T> int updateByPrimaryKey(String mapperId, T record);
+    
+    /**
+     * 根据条件修改有效数据
+     * @param String mapperId
+     * @param T record
+     * @return int
+     */
+    public <T> int updateSelective(String mapperId, T record);
+    
+    /**
+     * 根据条件修改数据
+     * @param String mapperId
+     * @param Map<String, Object> param
+     * @return int
+     */
+    public int update(String mapperId, Map<String, Object> param);
+    
+    /**
+     * 根据条件修改数据
+     * @param String mapperId
+     * @param Map<String, Object> param
+     * @return int
+     */
+    public <T> int update(String mapperId, T record);
+    
+    /**
+     * 根据主键删除
+     * @param String mapperId
+     * @param Object key
+     * @return int
+     */
+    public int deleteByPrimaryKey(String mapperId, Object key);
+
+    /**
+     * 根据主键删除
+     * @param String mapperId
+     * @param List<Object> keys
+     * @return int
+     */
+    public int deleteInPrimaryKey(String mapperId, List<Object> keys);
+    
+    /**
+     * 根据条件删除
+     * @param String mapperId
+     * @param Object key
+     * @return int
+     */
+    public int delete(String mapperId, Object key);
+    
+    /**
+     * 根据主键查询单一记录
+     * @param String mapperId
+     * @param Object key
+     * @return T
+     */
+    public <T> T selectByPrimaryKey(String mapperId, Object key);
+    
+
+    /**
+     * 根据条件查询多条记录
+     * @param String mapperId
+     * @param Map<String, Object> param
+     * @return List<T>
+     */
+    public <T> List<T> select(String mapperId, Map<String, Object> param);
+    
+    /**
+     * 根据条件查询多条记录，带分页
+     * @param String mapperId
+     * @param Map<String, Object> param
+     * @param RowBounds rowRound
+     * @return List<T>
+     */
+    public <T> List<T> select(String mapperId, Map<String, Object> param, RowBounds rowRound);
+    
+    /**
+     * 根据条件查询多条记录，带分页
+     * @param String mapperId
+     * @param T record
+     * @param RowBounds rowRound
+     * @return List<T>
+     */
+    public <T> List<T> select(String mapperId, T record, RowBounds rowRound);
+    
+    
+    /**
+     * 根据条件查询多条记录
+     * @param String mapperId
+     * @param T record
+     * @return List<T>
+     */
+    public <T> List<T> select(String mapperId, T record);
+
+    /**
+     * 批量插入
+     * @param String mapperId
+     * @param List<T> entitys
+     * @return int
+     */
+    public <T> int insertBatch(String mapperId, List<T> entitys);
+
+    /**
+     * 批量修改
+     * @param String mapperId
+     * @param List<T> entitys
+     * @return int
+     */
+    public <T> int updateBatch(String mapperId, List<T> entitys);
+
+    /**
+     * 批量删除
+     * @param String mapperId
+     * @param List<T> entitys
+     * @return int
+     */
+    public <T> int deleteBatch(String mapperId, List<T> entitys);
+
+}

@@ -1,0 +1,35 @@
+package {IServiceSuperPackage};
+
+import {EntityPackage};
+import {EntitySupperPackage}.base.Argument;
+
+/**
+ * 此接口为[代码工厂]自动生成
+ * @Desc {EntityComment}
+ * @Time {Time}
+ * @GeneratedByCodeFactory
+ */
+public interface I{EntityName}Service {
+    
+    public Argument selectById(Argument arg);
+    
+    public Argument select(Argument arg);
+    
+    public Argument selectPaging(Argument arg);
+    
+    public Argument insert(Argument arg);
+    
+    public Argument insertSelective(Argument arg);
+    
+    public Argument update(Argument arg);
+    
+    public Argument updateSelective(Argument arg);
+    
+    public Argument delete(Argument arg);
+    
+    public Argument insertBatch(Argument arg);
+    
+    public Argument deleteBatch(Argument arg);
+    
+
+}

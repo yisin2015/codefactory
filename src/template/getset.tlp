@@ -1,0 +1,17 @@
+
+    /**
+     * 获取 {comment} 的值
+     * @return {JavaType}
+     */
+    public {JavaType} get{AttrName}() {
+        return {attrName};
+    }
+    
+    /**
+     * 设置{comment} 的值
+     * @param {JavaType} {attrName}
+     */
+    public {EntityName} set{AttrName}({JavaType} {attrName}) {
+        this.{attrName} = {attrName};
+        return this;
+    }

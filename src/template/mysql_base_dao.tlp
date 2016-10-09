@@ -1,0 +1,203 @@
+package {DaoSuperPackage}.base;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import org.apache.ibatis.session.RowBounds;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.support.SqlSessionDaoSupport;
+import org.springframework.stereotype.Repository;
+
+/**
+ * 公共的Dao实现类提供基本的增删该查操作，减少大量重复的代码
+ * 此类为[代码工厂]自动生成
+ * @Time {Time}
+ * @GeneratedByCodeFactory
+ */
+@Repository("baseDao")
+public class BaseDao extends SqlSessionDaoSupport implements IBaseDao {
+    
+    @Resource
+    public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
+        super.setSqlSessionFactory(sqlSessionFactory);
+    }
+    
+    public SqlSession dao() {
+        return getSqlSession();
+    }
+
+    /**
+     * 插入记录
+     * @param String mapperId
+     * @param T record
+     * @return int
+     */
+    public <T> int insert(String mapperId, T record) {
+        return dao().insert(mapperId, record);
+    }
+    
+    /**
+     * 插入记录
+     * @param String mapperId
+     * @param Object obj
+     * @return int
+     */
+    public int insertBySelect(String mapperId, Object obj) {
+        return dao().insert(mapperId, obj);
+    }
+
+    /**
+     * 根据主键修改全部属性
+     * @param String mapperId
+     * @param T record
+     * @return int
+     */
+    public <T> int updateByPrimaryKey(String mapperId, T record) {
+        return dao().update(mapperId, record);
+    }
+    
+    /**
+     * 根据条件修改有效数据
+     * @param String mapperId
+     * @param T record
+     * @return int
+     */
+    public <T> int updateSelective(String mapperId, T record) {
+        return dao().update(mapperId, record);
+    }
+    
+    /**
+     * 根据条件修改数据
+     * @param String mapperId
+     * @param Map<String, Object> param
+     * @return int
+     */
+    public int update(String mapperId, Map<String, Object> param) {
+        return dao().update(mapperId, param);
+    }
+    
+    /**
+     * 根据条件修改数据
+     * @param String mapperId
+     * @param T record
+     * @return int
+     */
+    public <T> int update(String mapperId, T record) {
+        return dao().update(mapperId, record);
+    }
+
+    /**
+     * 根据主键删除
+     * @param String mapperId
+     * @param Object key
+     * @return int
+     */
+    public int deleteByPrimaryKey(String mapperId, Object key) {
+        return dao().delete(mapperId, key);
+    }
+
+    /**
+     * 根据主键删除
+     * @param String mapperId
+     * @param List<Object> keys
+     */
+    public int deleteInPrimaryKey(String mapperId, List<Object> keys) {
+        return dao().delete(mapperId, keys);
+    }
+    
+    /**
+     * 根据条件删除
+     * @param String mapperId
+     * @param Object key
+     * @return int
+     */
+    public int delete(String mapperId, Object keys) {
+        return dao().delete(mapperId, keys);
+    }
+    
+    /**
+     * 根据主键查询单一记录
+     * @param String mapperId
+     * @param Object key
+     * @return T
+     */
+    public <T> T selectByPrimaryKey(String mapperId, Object key) {
+        return dao().selectOne(mapperId, key);
+    }
+    
+    /**
+     * 根据条件查询多条记录
+     * @param String mapperId
+     * @param Map<String, Object> param
+     * @return List<T>
+     */
+    public <T> List<T> select(String mapperId, Map<String, Object> param) {
+        return dao().selectList(mapperId, param);
+    }
+    
+    /**
+     * 根据条件查询多条记录，带分页
+     * @param String mapperId
+     * @param Map<String, Object> param
+     * @param RowBounds rowRound
+     * @return List<T>
+     */
+    public <T> List<T> select(String mapperId, Map<String, Object> param, RowBounds rowRound) {
+        return dao().selectList(mapperId, param, rowRound);
+    }
+    
+    /**
+     * 根据条件查询多条记录，带分页
+     * @param String mapperId
+     * @param T record
+     * @param RowBounds rowRound
+     * @return List<T>
+     */
+    public <T> List<T> select(String mapperId, T record, RowBounds rowRound) {
+        return dao().selectList(mapperId, record, rowRound);
+    }
+
+    /**
+     * 根据条件查询多条记录
+     * @param String mapperId
+     * @param T record
+     * @return List<T>
+     */
+    public <T> List<T> select(String mapperId, T record) {
+        return dao().selectList(mapperId, record);
+    }
+
+    /**
+     * 批量插入
+     * @param String mapperId
+     * @param List<T> entitys
+     * @return int
+     */
+    public <T> int insertBatch(String mapperId, List<T> entitys) {
+        return dao().insert(mapperId, entitys);
+    }
+
+    /**
+     * 批量修改
+     * @param String mapperId
+     * @param List<T> entitys
+     * @return int
+     */
+    public <T> int updateBatch(String mapperId, List<T> entitys) {
+        return dao().update(mapperId, entitys);
+    }
+
+    /**
+     * 批量删除
+     * @param String mapperId
+     * @param List<T> entitys
+     * @return int
+     */
+    public <T> int deleteBatch(String mapperId, List<T> entitys) {
+        return dao().delete(mapperId, entitys);
+    }
+
+}

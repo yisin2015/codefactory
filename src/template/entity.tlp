@@ -1,0 +1,22 @@
+package {package};
+{importDate}
+{importTimestamp}
+
+/**
+ * 此实体类为[代码工厂]自动生成
+ * @Desc {EntityComment}
+ * @Time {Time}
+ * @GeneratedByCodeFactory
+ */
+public class {EntityName} implements java.io.Serializable {
+
+{attr_list}
+{attr_getset_list}
+
+	public String toString() {
+        StringBuffer sb = new StringBuffer();
+        sb.append(this.getClass().getName());
+{attr_tostring_list}
+        return sb.toString();
+    }
+}

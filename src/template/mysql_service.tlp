@@ -1,0 +1,197 @@
+package {ServiceSuperPackage};
+
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+import org.apache.ibatis.session.RowBounds;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import {EntityPackage};
+import {EntitySupperPackage}.base.BaseArgument;
+import {ServiceSuperPackage}.base.BaseService;
+import {IServicePackage};
+import com.github.pagehelper.Page;
+
+/**
+ * 此类为[代码工厂]自动生成
+ * @Desc {EntityComment}
+ * @Time {Time}
+ * @GeneratedByCodeFactory
+ */
+@Service("{ServiceNameLower}")
+public class {ServiceName} extends BaseService implements {IServiceName} {
+    private static final Logger logger = Logger.getLogger({ServiceName}.class);
+
+	public BaseArgument selectById(BaseArgument arg) {
+        try {
+            {PrimaryJavaType} {PrimaryFeild} = ({PrimaryJavaType}) arg.getReq("{PrimaryFeild}");
+            {EntityName} obj = dao.selectOne(getMapper({EntityName}.class, "selectByPrimaryColumn"), {PrimaryFeild});
+            if(obj != null){
+                arg.success().setObj(obj);
+            } else {
+                arg.fail();
+            }
+        } catch(Exception e){
+            logger.error("查询{EntityName}数据失败：" + e.getMessage(), e);
+            arg.fail("查询数据失败");
+        }
+        return arg;
+    }
+
+    public BaseArgument select(BaseArgument arg) {
+        try {
+            {EntityName} entity = ({EntityName}) arg.getObj();
+            List<{EntityName}> dataList = dao.selectList(getMapper(entity, "select"), entity);
+            if(dataList != null){
+                arg.success().setToRtn("list", dataList);
+            } else {
+                arg.fail();
+            }
+        } catch(Exception e){
+            logger.error("查询{EntityName}数据失败：" + e.getMessage(), e);
+            arg.fail("查询数据失败");
+        }
+        return arg;
+    }
+    
+    public BaseArgument selectPaging(BaseArgument arg) {
+        try {
+            {EntityName} entity = ({EntityName}) arg.getObj();
+            Page page = (Page) arg.getReq("page");
+            List<{EntityName}> dataList = dao.selectList(getMapper(entity, "select"), entity, new RowBounds(page.getStartRow(), page.getPageSize()));
+            if(dataList != null){
+                arg.success().setToRtn("list", dataList);
+            } else {
+                arg.fail();
+            }
+        } catch(Exception e){
+            logger.error("分页查询{EntityName}数据失败：" + e.getMessage(), e);
+            arg.fail("分页查询数据失败");
+        }
+        return arg;
+    }
+    
+    public BaseArgument insert(BaseArgument arg) {
+        try {
+            {EntityName} entity = ({EntityName}) arg.getObj();
+            int state = dao.insert(getMapper(entity, "insert"), entity);
+            if(state != -1){
+                arg.success().setObj(entity).setNum(state);
+            } else {
+                arg.fail();
+            }
+        } catch(Exception e){
+            logger.error("新增{EntityName}数据失败：" + e.getMessage(), e);
+            arg.fail("新增数据失败");
+            throw new RuntimeException("新增{EntityName}数据失败");
+        }
+        return arg;
+    }
+    
+    public BaseArgument insertSelective(BaseArgument arg) {
+        try {
+            {EntityName} entity = ({EntityName}) arg.getObj();
+            int state = dao.insert(getMapper(entity, "insertSelective"), entity);
+            if(state != -1){
+                arg.success().setObj(entity).setNum(state);
+            } else {
+                arg.fail();
+            }
+        } catch(Exception e){
+            logger.error("新增{EntityName}数据失败：" + e.getMessage(), e);
+            arg.fail("新增数据失败");
+            throw new RuntimeException("新增{EntityName}数据失败");
+        }
+        return arg;
+    }
+    
+    public BaseArgument update(BaseArgument arg) {
+        try {
+            {EntityName} entity = ({EntityName}) arg.getObj();
+            int state = dao.update(getMapper(entity, "update"), entity);
+            if(state != -1){
+                arg.success().setObj(entity).setNum(state);
+            } else {
+                arg.fail();
+            }
+        } catch(Exception e){
+            logger.error("修改{EntityName}数据失败：" + e.getMessage(), e);
+            arg.fail("修改数据失败");
+            throw new RuntimeException("修改{EntityName}数据失败");
+        }
+        return arg;
+    }
+    
+    public BaseArgument updateSelective(BaseArgument arg) {
+        try {
+            {EntityName} entity = ({EntityName}) arg.getObj();
+            int state = dao.update(getMapper(entity, "updateSelective"), entity);
+            if(state != -1){
+                arg.success().setObj(entity).setNum(state);
+            } else {
+                arg.fail();
+            }
+        } catch(Exception e){
+            logger.error("修改{EntityName}数据失败：" + e.getMessage(), e);
+            arg.fail("修改数据失败");
+            throw new RuntimeException("修改{EntityName}数据失败");
+        }
+        return arg;
+    }
+    
+    public BaseArgument delete(BaseArgument arg) {
+        try {
+            {EntityName} entity = ({EntityName}) arg.getObj();
+            int state = dao.delete(getMapper(entity, "delete"), entity);
+            if(state != -1){
+                arg.success().setObj(entity).setNum(state);
+            } else {
+                arg.fail();
+            }
+        } catch(Exception e){
+            logger.error("删除{EntityName}数据失败：" + e.getMessage(), e);
+            arg.fail("删除数据失败");
+            throw new RuntimeException("删除{EntityName}数据失败");
+        }
+        return arg;
+    }
+    
+    public BaseArgument insertBatch(BaseArgument arg) {
+        try {
+            List<{EntityName}> entityList = (List<{EntityName}>) arg.getObj();
+            int state = dao.update(getMapper({EntityName}.class, "insertBatch"), entityList);
+            if(state != -1){
+                arg.success().setNum(state);
+            } else {
+                arg.fail();
+            }
+        } catch(Exception e){
+            logger.error("批量插入{EntityName}数据失败：" + e.getMessage(), e);
+            arg.fail("批量插入数据失败");
+            throw new RuntimeException("批量插入{EntityName}数据失败");
+        }
+        return arg;
+    }
+    
+    public BaseArgument deleteBatch(BaseArgument arg) {
+        try {
+            List<{PrimaryJavaType}> idList = (List<{PrimaryJavaType}>) arg.getReq("list");
+            int state = dao.delete(getMapper({EntityName}.class, "deleteBatch"), idList);
+            if(state != -1){
+                arg.success().setNum(state);
+            } else {
+                arg.fail();
+            }
+        } catch(Exception e){
+            logger.error("批量删除{EntityName}数据失败：" + e.getMessage(), e);
+            arg.fail("批量删除数据失败");
+            throw new RuntimeException("批量删除{EntityName}数据失败");
+        }
+        return arg;
+    }
+
+}

@@ -1,0 +1,177 @@
+package {ServiceSuperPackage}.base;
+
+import java.util.List;
+import java.util.Map;
+
+import {EntitySuperPackage}.base.Argument;
+import com.github.pagehelper.Page;
+
+/**
+ * 此接口为[代码工厂]自动生成
+ * @Time {Time}
+ * @GeneratedByCodeFactory
+ */
+public interface IBaseService {
+
+    /**
+     * 插入记录
+     */
+    public <T> Argument insert(T record);
+
+    /**
+     * 插入记录
+     */
+    public <T> Argument insertSelecitve(T record);
+
+    /**
+     * 插入记录
+     */
+    public <T> Argument insert(String mapperId, T record);
+
+    /**
+     * 插入有效记录
+     */
+    public Argument insertBySelective(Class<?> clasz, Object obj);
+    
+    /**
+     * 根据主键修改全部属性
+     */
+    public <T> Argument updateByPrimaryKey(T record);
+    
+    /**
+     * 根据条件修改有效数据
+     */
+    public <T> Argument updateSelective(String mapperId, T record);
+
+    /**
+     * 根据主键修改有效属性
+     */
+    public <T> Argument updateByPrimaryKeySelective(T record);
+
+    /**
+     * 根据主键修改全部属性
+     */
+    public <T> Argument updateByPrimaryKey(String mapperId, T record);
+    
+    /**
+     * 根据条件修改全部属性
+     */
+    public <T> Argument update(T record);
+    
+    /**
+     * 根据条件修改全部属性
+     */
+    public <T> Argument update(String mapperId, T record);
+
+    /**
+     * 根据主键删除
+     */
+    public Argument deleteByPrimaryKey(Class<?> clasz, Object key);
+    
+    /**
+     * 根据主键删除
+     */
+    public Argument deleteByPrimaryKey(String mapperId, Object key);
+
+    /**
+     * 根据主键删除
+     */
+    public Argument deleteByInPrimaryKey(Class<?> clasz, List<Object> key);
+
+    /**
+     * 根据主键删除
+     */
+    public Argument deleteInPrimaryKey(String mapperId, List<Object> keys);
+
+
+    /**
+     * 根据条件删除
+     */
+    public Argument delete(Class<?> clasz, Object key);
+    
+    /**
+     * 根据条件删除
+     */
+    public Argument delete(String mapperId, Object key);
+    
+    /**
+     * 根据主键查询单一记录
+     */
+    public Argument selectByPrimaryKey(Class<?> clasz, Object key);
+
+    /**
+     * 根据主键查询单一记录
+     */
+    public Argument selectByPrimaryKey(String mapperId, Object key);
+
+    /**
+     * 根据条件查询多条记录
+     */
+    public Argument select(Class<?> clasz, Map<String, Object> param);
+    
+    /**
+     * 根据条件查询多条记录
+     */
+    public Argument select(String mapperId, Map<String, Object> param);
+
+    /**
+     * 根据条件查询多条记录
+     */
+    public <T> Argument select(T record);
+    
+    /**
+     * 根据条件查询多条记录，带分页
+     */
+    public Argument select(Class<?> clasz, Map<String, Object> param, Page page);
+    
+    /**
+     * 根据条件查询多条记录，带分页
+     */
+    public Argument select(String mapperId, Map<String, Object> param, Page page);
+    
+    /**
+     * 根据条件查询多条记录，带分页
+     */
+    public <T> Argument select(T record, Page page);
+    
+    /**
+     * 根据条件查询多条记录，带分页
+     */
+    public <T> Argument select(String mapperId, T record, Page page);
+
+    /**
+     * 根据条件查询多条记录
+     */
+    public <T> Argument select(String mapperId, T record);
+
+    /**
+     * 批量插入
+     */
+    public <T> Argument insertBatch(Class<?> clasz, List<T> entitys);
+
+    /**
+     * 批量插入
+     */
+    public <T> Argument insertBatch(String mapperId, List<T> entitys);
+
+    /**
+     * 批量修改
+     */
+    public <T> Argument updateBatch(String mapperId, List<T> entitys);
+
+    /**
+     * 批量删除
+     */
+    public <T> Argument deleteBatch(String mapperId, List<T> entitys);
+
+    /**
+     * 批量修改
+     */
+    public <T> Argument updateBatch(Class<?> clasz, List<T> entitys);
+
+    /**
+     * 批量删除
+     */
+    public <T> Argument deleteBatch(Class<?> clasz, List<T> entitys);
+    
+}
